@@ -41,11 +41,11 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.SharedConstants;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 
@@ -162,7 +162,7 @@ public class FabricMod implements ModInitializer, Server {
 
         if (world instanceof String) {
             Identifier identifier = Identifier.tryParse((String) world);
-            if (identifier != null) world = serverInstance.getWorld(RegistryKey.of(RegistryKeys.WORLD, identifier));
+            if (identifier != null) world = serverInstance.getWorld(RegistryKey.of(Registry.WORLD_KEY, identifier));
         }
 
         if (world instanceof RegistryKey) {
