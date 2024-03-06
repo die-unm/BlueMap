@@ -12,6 +12,7 @@ includeBuild("BlueMapCommon")
 includeBuild("implementations/cli")
 
 includeBuild("implementations/fabric-1.18")
+includeBuild("implementations/fabric-1.19")
 includeBuild("implementations/fabric-1.19.4")
 includeBuild("implementations/fabric-1.20")
 
